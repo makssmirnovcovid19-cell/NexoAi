@@ -693,7 +693,7 @@
         </div>
         <div class="copyright">© 2025 NexusAI. Все права защищены.</div>
     </div>
-</section>
+
 
 <div class="modal" id="modal">
     <div class="modal-content">
