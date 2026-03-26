@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -1041,6 +1041,4 @@
         el.style.transition = 'all 0.6s ease';
         observer.observe(el);
     });
-</script>
-</body>
-</html>
+
