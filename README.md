@@ -2,12 +2,9 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NexusAI | Платформа искусственного интеллекта</title>
-    <meta name="description" content="Платформа нового поколения для бизнеса на основе искусственного интеллекта.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -19,31 +16,9 @@
             font-family: 'Inter', sans-serif;
             background: #FFFFFF;
             color: #111827;
-            overflow-x: hidden;
         }
         html {
             scroll-behavior: smooth;
-        }
-        .cursor {
-            width: 8px;
-            height: 8px;
-            background: #3B82F6;
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-        }
-        .cursor-follower {
-            width: 40px;
-            height: 40px;
-            border: 2px solid rgba(59, 130, 246, 0.3);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9998;
-        }
-        @media (max-width: 768px) {
-            .cursor, .cursor-follower { display: none; }
         }
         .container {
             max-width: 1280px;
@@ -51,7 +26,9 @@
             padding: 0 48px;
         }
         @media (max-width: 768px) {
-            .container { padding: 0 24px; }
+            .container {
+                padding: 0 24px;
+            }
         }
         nav {
             position: fixed;
@@ -88,8 +65,11 @@
             color: #334155;
             font-weight: 500;
             cursor: pointer;
+            transition: color 0.2s;
         }
-        .nav-links a:hover { color: #3B82F6; }
+        .nav-links a:hover {
+            color: #3B82F6;
+        }
         .btn-nav {
             background: #0F172A;
             color: white;
@@ -98,6 +78,11 @@
             font-weight: 600;
             border: none;
             cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-nav:hover {
+            background: #1E293B;
+            transform: translateY(-2px);
         }
         .mobile-menu-btn {
             display: none;
@@ -105,8 +90,12 @@
             cursor: pointer;
         }
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .mobile-menu-btn { display: block; }
+            .nav-links {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
         }
         .hero {
             padding: 180px 0 100px;
@@ -130,7 +119,9 @@
             max-width: 900px;
         }
         @media (max-width: 768px) {
-            .hero h1 { font-size: 40px; }
+            .hero h1 {
+                font-size: 40px;
+            }
         }
         .gradient-text {
             background: linear-gradient(135deg, #3B82F6, #8B5CF6, #EC489A);
@@ -158,6 +149,7 @@
             font-weight: 600;
             border: none;
             cursor: pointer;
+            transition: all 0.3s;
         }
         .btn-primary:hover {
             background: #1E293B;
@@ -170,6 +162,7 @@
             border-radius: 100px;
             font-weight: 600;
             cursor: pointer;
+            transition: all 0.3s;
         }
         .btn-outline:hover {
             border-color: #3B82F6;
@@ -185,6 +178,7 @@
         .stat-item h3 {
             font-size: 40px;
             font-weight: 800;
+            margin-bottom: 8px;
         }
         .stat-item p {
             font-size: 14px;
@@ -214,7 +208,9 @@
             margin-bottom: 20px;
         }
         @media (max-width: 768px) {
-            .section-title h2 { font-size: 32px; }
+            .section-title h2 {
+                font-size: 32px;
+            }
         }
         .section-title p {
             font-size: 18px;
@@ -373,7 +369,9 @@
                 margin: 40px 24px;
                 padding: 60px 32px;
             }
-            .cta h2 { font-size: 32px; }
+            .cta h2 {
+                font-size: 32px;
+            }
         }
         .cta h2 {
             font-size: 48px;
@@ -401,6 +399,11 @@
             font-weight: 600;
             border: none;
             cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
         }
         .modal {
             display: none;
@@ -486,7 +489,9 @@
             font-size: 14px;
             cursor: pointer;
         }
-        .footer-col a:hover { color: #3B82F6; }
+        .footer-col a:hover {
+            color: #3B82F6;
+        }
         .social-icons {
             display: flex;
             gap: 20px;
@@ -507,12 +512,9 @@
 </head>
 <body>
 
-<div class="cursor"></div>
-<div class="cursor-follower"></div>
-
 <nav>
     <div class="container nav-container">
-        <div class="logo" onclick="scrollToSection('hero')">NEXUS<span style="color: #3B82F6;">AI</span></div>
+        <div class="logo" onclick="scrollToTop()">NEXUS<span style="color: #3B82F6;">AI</span></div>
         <div class="nav-links">
             <a onclick="scrollToSection('features')">Платформа</a>
             <a onclick="scrollToSection('pricing')">Тарифы</a>
@@ -654,14 +656,14 @@
     </div>
 </section>
 
-<section class="cta">
+<div class="cta">
     <h2>Готовы к AI-революции?</h2>
     <p>Присоединяйтесь к 5000+ компаний, которые уже увеличили прибыль</p>
     <div class="cta-buttons">
         <button class="btn-white" onclick="openModal('Демо-доступ', 'Получите демо-доступ к платформе.')">Получить демо</button>
         <button class="btn-primary" style="background: white; color: #0F172A;" onclick="openModal('Консультация', 'Эксперт свяжется с вами.')">Консультация</button>
     </div>
-</section>
+</div>
 
 <footer>
     <div class="container">
@@ -693,7 +695,7 @@
         </div>
         <div class="copyright">© 2025 NexusAI. Все права защищены.</div>
     </div>
-
+</footer>
 
 <div class="modal" id="modal">
     <div class="modal-content">
@@ -706,50 +708,42 @@
 
 <script>
     function openModal(title, message) {
-        document.getElementById('modalTitle').textContent = title;
-        document.getElementById('modalText').textContent = message;
+        document.getElementById('modalTitle').innerText = title;
+        document.getElementById('modalText').innerText = message;
         document.getElementById('modal').classList.add('active');
     }
     function closeModal() {
         document.getElementById('modal').classList.remove('active');
     }
-    document.getElementById('modal').addEventListener('click', (e) => {
-        if (e.target === document.getElementById('modal')) closeModal();
+    document.getElementById('modal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
     });
     function scrollToSection(id) {
-        const el = document.getElementById(id);
+        var el = document.getElementById(id);
         if (el) {
-            const offset = 80;
-            const pos = el.getBoundingClientRect().top + window.pageYOffset - offset;
+            var offset = 80;
+            var pos = el.getBoundingClientRect().top + window.pageYOffset - offset;
             window.scrollTo({ top: pos, behavior: 'smooth' });
         }
     }
-    const cursor = document.querySelector('.cursor');
-    const follower = document.querySelector('.cursor-follower');
-    if (cursor && follower) {
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            setTimeout(() => {
-                follower.style.left = e.clientX - 20 + 'px';
-                follower.style.top = e.clientY - 20 + 'px';
-            }, 50);
-        });
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
             }
         });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.feature-card, .pricing-card, .resource-card').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'all 0.6s ease';
-        observer.observe(el);
-    });
+    var elements = document.querySelectorAll('.feature-card, .pricing-card, .resource-card');
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.opacity = '0';
+        elements[i].style.transform = 'translateY(30px)';
+        elements[i].style.transition = 'all 0.6s ease';
+        observer.observe(elements[i]);
+    }
 </script>
 </body>
 </html>
